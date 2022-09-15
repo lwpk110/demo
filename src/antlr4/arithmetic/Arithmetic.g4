@@ -1,4 +1,8 @@
-grammar Calculate;
+grammar Arithmetic;
+
+@header{
+package cn.deep.antlr4.parser;
+}
 
 prog : stat+ EOF;
 
@@ -25,3 +29,4 @@ ID : [a-zA-Z]+ ;
 NUMBER : [0-9]+ ('.' [0-9]+)? ;
 
 WS : [ \t]+ -> skip;
+COMMENT: '#' '!' ~('\n'|'\r')* -> channel(HIDDEN);
