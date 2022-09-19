@@ -4,29 +4,30 @@ grammar Arithmetic;
 package cn.deep.antlr4.parser;
 }
 
-prog : stat+ EOF;
-
-stat: expr                      # printExpr
-    | ID '=' expr               # assign
+prog
+    : expr EOF
     ;
 
-expr: expr op=(MUL|DIV) expr    # MulDiv
-| expr op=(ADD|SUB) expr        # AddSub
-| NUMBER                        # NUMBER
-| ID                            # id
-| LPAREN expr RPAREN            # parens
-;
+expr
+    : expr op=(MUL|DIV|MOD) expr    # mulDiv
+    | expr op=(ADD|SUB) expr        # addSub
+    | str_expr                      # calEle
+    | LPAREN expr RPAREN            # parens
+    ;
 
-MUL : '*' ;
-DIV : '/' ;
-ADD : '+' ;
-SUB : '-' ;
+MUL: '*' ;
+DIV: '/' ;
+ADD: '+' ;
+SUB: '-' ;
+MOD: '%';
 
 LPAREN: '(';
 RPAREN: ')';
 
-ID : [a-zA-Z]+ ;
-NUMBER : [0-9]+ ('.' [0-9]+)? ;
+str_expr: STR_TYPE | NUMBER | '-' NUMBER  ;
 
-WS : [ \t]+ -> skip;
+NUMBER: [0-9]+ ('.' [0-9]+)? ;
+STR_TYPE: ('a' .. 'z' | 'A' .. 'Z'  | '0' .. '9' )+;
+
+WS: [ \t]+ -> skip;
 COMMENT: '#' '!' ~('\n'|'\r')* -> channel(HIDDEN);
