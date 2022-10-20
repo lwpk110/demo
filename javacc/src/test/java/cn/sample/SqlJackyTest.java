@@ -1,6 +1,5 @@
 package cn.sample;
 
-import cn.sample.jacky.JackySqlParserImpl;
 import org.apache.calcite.avatica.util.Casing;
 import org.apache.calcite.avatica.util.Quoting;
 import org.apache.calcite.sql.SqlNode;
@@ -10,10 +9,6 @@ import org.apache.calcite.tools.FrameworkConfig;
 import org.apache.calcite.tools.Frameworks;
 import org.junit.jupiter.api.Test;
 
-/**
- * Author yuqi
- * Time 10/5/19 16:15
- **/
 class ParserTest {
 
     @Test
@@ -39,7 +34,7 @@ class ParserTest {
     }
 
 
-    @Test
+/*    @Test
     public void testSubmitWrongOK() {
         String sql = "jacky job 'select * from test'";
 
@@ -61,5 +56,5 @@ class ParserTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 }

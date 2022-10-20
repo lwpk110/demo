@@ -1,13 +1,16 @@
 data: {
   parser: {
-    package: "cn.sample.jacky",
-    class: "JackySqlParserImpl",
+    package: "cn.sample.createfunc",
+    class: "CreatFunctionParser",
     imports: [
-        "cn.sample.jackyjob.SqlJacky"
+        "cn.sample.createfunc.SqlCreateFunction",
+        "cn.sample.createfunc.SqlProperty",
+        "org.apache.calcite.util.NlsString"
     ]
     keywords: [
-        "JACKY",
-        "JOB"
+      "PARAMS"
+      "COMMENT"
+      "PROPERTY"
     ]
     nonReservedKeywords: [
       "A"
@@ -307,7 +310,7 @@ data: {
     joinTypes: [
     ]
     statementParserMethods: [
-        "SqlJacky()"
+        "SqlCreateFunction()"
     ]
     literalParserMethods: [
     ]
