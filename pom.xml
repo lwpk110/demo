@@ -40,6 +40,11 @@
             <artifactId>antlr4-runtime</artifactId>
             <version>4.9.2</version>
         </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>5.8.8</version>
+        </dependency>
         <!--        test scope-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -95,6 +100,12 @@
     <!--    build and plugin-->
     <build>
         <sourceDirectory>generated</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/javacc</directory>
+                <targetPath>javacc</targetPath>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.antlr</groupId>
@@ -117,6 +128,21 @@
                     <treatWarningsAsErrors>true</treatWarningsAsErrors>
                 </configuration>
             </plugin>
+            <!--            javacc code generator-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>javacc-maven-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <sourceDirectory>${basedir}/src/javacc</sourceDirectory>
+                    <includes>
+                        <include>**/*.jj</include>
+                    </includes>
+                    <lookAhead>2</lookAhead>
+                    <isStatic>false</isStatic>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
@@ -125,6 +151,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M6</version>
             </plugin>
+
         </plugins>
     </build>
 </project>

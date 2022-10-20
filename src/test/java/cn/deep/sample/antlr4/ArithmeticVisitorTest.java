@@ -2,8 +2,6 @@ package cn.deep.sample.antlr4;
 
 import cn.deep.antlr4.parser.ArithmeticLexer;
 import cn.deep.antlr4.parser.ArithmeticParser;
-import cn.deep.sample.antlr4.ArithmeticVisitor;
-import cn.deep.sample.antlr4.Node;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
