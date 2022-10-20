@@ -5,12 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.deep.sample</groupId>
     <artifactId>demo</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>javacc</module>
+        <module>antlr4</module>
+    </modules>
     <!--properties-->
     <properties>
         <maven.compiler.source>9</maven.compiler.source>
         <maven.compiler.target>9</maven.compiler.target>
         <mockito.version>4.2.0</mockito.version>
+        <calcite.version>1.32.0</calcite.version>
     </properties>
     <!--    BOM manage-->
     <dependencyManagement>
@@ -151,7 +157,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M6</version>
             </plugin>
-
         </plugins>
     </build>
 </project>
