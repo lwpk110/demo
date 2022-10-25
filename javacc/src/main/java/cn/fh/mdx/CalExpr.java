@@ -5,16 +5,23 @@ import org.apache.calcite.sql.parser.SqlParserPos;
 
 import java.util.List;
 
-public class MdxParseNode extends SqlCall {
-    private final String mdxStr;
-    protected MdxParseNode(SqlParserPos pos, String mdxStr) {
+public class CalExpr extends SqlCall {
+
+    private  SqlNode left;
+    private  SqlNode right;
+
+    public CalExpr(SqlParserPos pos, SqlNode left, SqlNode right) {
         super(pos);
-        this.mdxStr = mdxStr;
+        this.left = left;
+        this.right = right;
     }
 
     @Override
     public void unparse(SqlWriter writer, int leftPrec, int rightPrec) {
-        super.unparse(writer, leftPrec, rightPrec);
+        left.unparse(writer, leftPrec, rightPrec);
+        writer.keyword("=");
+        right.unparse(writer, leftPrec, rightPrec);
+        writer.keyword(";");
     }
 
     @Override
@@ -32,7 +39,11 @@ public class MdxParseNode extends SqlCall {
         return null;
     }
 
-    public String getMdxStr() {
-        return mdxStr;
+    public SqlNode getLeft() {
+        return left;
+    }
+
+    public SqlNode getRight() {
+        return right;
     }
 }
