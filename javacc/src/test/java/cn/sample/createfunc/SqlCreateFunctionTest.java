@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SqlCreateFunctionTest {
 
-    @Test
+/*    @Test
     void  test() throws SqlParseException {
         // 解析配置 - mysql设置
         SqlParser.Config mysqlConfig = SqlParser.configBuilder()
@@ -30,5 +30,5 @@ class SqlCreateFunctionTest {
         SqlNode sqlNode = parser.parseQuery(sql);
         // 还原某个方言的SQL
         System.out.println(sqlNode.toSqlString(OracleSqlDialect.DEFAULT));
-    }
+    }*/
 }
