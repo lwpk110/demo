@@ -1,8 +1,8 @@
 package cn.deep.sample.allinterface;
 
-public class SomeAImpl implements SomeA {
+public class SomeBImpl implements SomeB {
   @Override
-  public void methodA1() {
-    System.out.println(this.getClass().getInterfaces()[0].getSimpleName() + ": methodA1 do something");
+  public void methodB1() {
+    System.out.println(this.getClass().getInterfaces()[0].getSimpleName() +": " + this.getClass().getMethods()[0].getName() + " do something");
   }
 }

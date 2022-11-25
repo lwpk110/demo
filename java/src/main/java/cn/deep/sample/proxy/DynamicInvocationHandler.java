@@ -1,4 +1,4 @@
-package cn.deep.sample.allinterface.proxy;
+package cn.deep.sample.proxy;
 
 import com.sun.org.slf4j.internal.Logger;
 import com.sun.org.slf4j.internal.LoggerFactory;

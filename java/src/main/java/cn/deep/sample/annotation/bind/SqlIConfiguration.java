@@ -1,4 +1,4 @@
-package com.proinnova.database.bind;
+package cn.deep.sample.annotation.bind;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

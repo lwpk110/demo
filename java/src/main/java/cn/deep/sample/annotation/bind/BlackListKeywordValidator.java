@@ -1,6 +1,5 @@
-package com.proinnova.database.bind;
+package cn.deep.sample.annotation.bind;
 
-import org.seeplnframework.exception.ValidationException;
 import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.Field;
@@ -26,7 +25,7 @@ public class BlackListKeywordValidator implements SqlInjectionHandler {
         String[] inj_stra = inj_str.split("\\|");
         for (String s : inj_stra) {
             if (var.contains(s) && var.indexOf(" ") > 0) {
-                throw new ValidationException(999800, String.format("参数%s非法", var));
+                throw new IllegalArgumentException(String.format("参数%s非法", var));
             }
         }
     }

@@ -1,6 +1,9 @@
-package com.proinnova.database.bind;
+package cn.deep.sample.annotation.bind;
 
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * <h3>sql 注入方法级别注解</h3>

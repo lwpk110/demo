@@ -1,4 +1,4 @@
-package com.proinnova.database.bind;
+package cn.deep.sample.annotation.bind;
 
 import java.util.Map;
 

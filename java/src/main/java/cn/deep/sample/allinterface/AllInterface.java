@@ -1,2 +1,4 @@
-package cn.deep.sample;public interface AllInterface {
+package cn.deep.sample.allinterface;
+
+public interface AllInterface extends SomeA, SomeB{
 }
