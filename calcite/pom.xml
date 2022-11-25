@@ -181,13 +181,13 @@
                             <goal>javacc</goal>
                         </goals>
                         <configuration>
-                            <sourceDirectory>${project.build.directory}/generated-sources/</sourceDirectory>
+                            <sourceDirectory>${project.build.directory}/generated-sources/javacc</sourceDirectory>
                             <includes>
                                 <include>**/Parser.jj</include>
                             </includes>
                             <lookAhead>2</lookAhead>
                             <isStatic>false</isStatic>
-                            <outputDirectory>${project.build.directory}/generated-sources/</outputDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources/javacc-gen</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
